@@ -1,56 +1,51 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body{
+body {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-.outer {
-    width: 50%;
-    height: 450px;
-    background-color: #333;
-    padding: 15px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.timer {
-    color: #fff;
-    font-size: 42px;
-}
-.timer-txt {
-    margin-top: 20px;
+.stopwatch {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #fff;
 }
 
-.controlBtn {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-
+#display {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-.controlBtn .btn {
-    padding: 8px 32px;
-    border-radius: 15px;
+.buttons button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
     border: none;
-    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.controlBtn .btn:hover{
-    background-color: #999;
-    color: #fff;
+#start {
+    background-color: #4caf50;
+    color: white;
+}
+
+#pause {
+    background-color: #ff9800;
+    color: white;
+}
+
+#stop {
+    background-color: #f44336;
+    color: white;
+}
+
+.buttons button:hover {
+    opacity: 0.8;
 }

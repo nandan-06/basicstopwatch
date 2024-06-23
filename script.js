@@ -12,7 +12,7 @@ const pauseButton = document.getElementById('pause');
 const stopButton = document.getElementById('stop');
 
 startButton.addEventListener('click', startTimer);
-pauseButton.addEventListener('click', pauseTimer);
+pauseButton.addEventListener('click', pauseOrResumeTimer);
 stopButton.addEventListener('click', stopTimer);
 
 function startTimer() {
@@ -24,11 +24,17 @@ function startTimer() {
     }
 }
 
-function pauseTimer() {
-    if (!paused && running) {
-        clearInterval(tInterval);
-        savedTime = new Date().getTime() - startTime;
-        paused = true;
+function pauseOrResumeTimer() {
+    if (running) {
+        if (paused) {
+            startTime = new Date().getTime() - savedTime;
+            tInterval = setInterval(getShowTime, 1);
+            paused = false;
+        } else {
+            clearInterval(tInterval);
+            savedTime = new Date().getTime() - startTime;
+            paused = true;
+        }
     }
 }
 
